@@ -48,11 +48,14 @@ class RatingsPage extends React.Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+
+});
+
+
 export default connect((state) => ({
   id: state.profile.id,
   name: state.profile.name,
   loading: !state.ratings.hasData,
   ratings: state.ratings.all,
-}), {
-  dispatchGetAllRatingsData: getAllRatingsData,
-})(RatingsPage);
+}), mapDispatchToProps)(RatingsPage);
